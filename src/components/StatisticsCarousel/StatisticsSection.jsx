@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import StatCard from './StatCard';
 import "slick-carousel/slick/slick.css";
@@ -32,8 +33,9 @@ const statistics = [
   }
 ];
 
-const StatisticsSection  = () => {
+const StatisticsSection: React.FC = () => {
 
+  const navigate = useNavigate();
   const settings = {
     dots: true,
     infinite: true,
@@ -63,12 +65,12 @@ const StatisticsSection  = () => {
   return (
     <section className="py-16 ">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4 text-[#f14c46]">
+        <h2 className="text-4xl font-bold text-center mb-4 text-[#fe5811]">
           Violence Against Women: The Statistics
         </h2>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          These statistics highlight the urgent need for action in addressing violence against women globally.
-          Each number represents countless lives affected by this ongoing crisis.
+          These statistics highlight the urgent need for action in addressing violence against women . <br />
+          <a href=""  onClick={() => navigate('/detailed-stats')} ><strong>click here to learn more</strong></a>
         </p>
         <div className="max-w-7xl mx-auto ">
           <Slider {...settings}>
